@@ -51,8 +51,6 @@ interface BoardProps {
 export default function Board2D({ board, onNodeClick, selectedNode, validMoves, theme }: BoardProps) {
   const t = THEMES[theme];
   const step = 95;
-
-  return (
     return (
   <div className="relative w-full h-full flex items-center justify-center p-4 sm:p-6 overflow-hidden">
     {/* The Physical "Table" Surface */}
