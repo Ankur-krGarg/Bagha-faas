@@ -53,9 +53,9 @@ export default function Board2D({ board, onNodeClick, selectedNode, validMoves, 
   const step = 95;
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center p-6">
+    <div className="relative w-full flex items-center justify-center p-4">
       {/* The Physical "Table" Surface */}
-      <div className={`relative w-full h-full max-w-[750px] max-h-[750px] rounded-[3rem] p-10 ${t.surface} ${t.glow} border border-white/5 transition-all duration-700`}>
+      <div className={`relative w-full max-w-[90vw] aspect-square rounded-[3rem] p-6 ${t.surface} ${t.glow} border border-white/5 transition-all duration-700`}>
         
         <svg viewBox="0 0 500 500" className="w-full h-full overflow-visible">
           <defs>
