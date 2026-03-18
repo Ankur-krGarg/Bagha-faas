@@ -53,10 +53,10 @@ export default function Board2D({ board, onNodeClick, selectedNode, validMoves, 
   const step = 95;
 
   return (
-    <div className="relative w-full flex items-center justify-center">
-    <div
-      className={`relative w-[min(90vw,70vh)] h-[min(90vw,70vh)] rounded-[3rem] p-4 ${t.surface} ${t.glow} border border-white/5 transition-all duration-700`}
-    >        
+    return (
+  <div className="relative w-full h-full flex items-center justify-center p-4 sm:p-6 overflow-hidden">
+    {/* The Physical "Table" Surface */}
+    <div className={`relative w-full aspect-square max-w-[min(85vw,75vh)] rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-10 ${t.surface} ${t.glow} border border-white/5 transition-all duration-700`}>        
         <svg viewBox="0 0 500 500" className="w-full h-full overflow-visible">
           <defs>
             <filter id="shadow">
@@ -80,9 +80,12 @@ export default function Board2D({ board, onNodeClick, selectedNode, validMoves, 
           ))}
 
           {/* Nodes & Interactive Pieces */}
+          const step = 90; 
+          const offset = 70;
+          
           {board.map((piece, i) => {
-            const x = (i % 5) * step + 60;
-            const y = Math.floor(i / 5) * step + 60;
+            const x = (i % 5) * step + offset;
+            const y = Math.floor(i / 5) * step + offset;
             const isSelected = selectedNode === i;
             const isValid = validMoves.includes(i);
 
