@@ -1,20 +1,99 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🎮 Bagha Faas
 
-# Run and deploy your AI Studio app
+**Bagha Faas** is a 2D browser-based strategy game built with **React + TypeScript + Vite**.
+It features a custom game engine and interactive gameplay mechanics.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/3caf0c9f-d3ad-49bf-99c2-2a341a012f55
+## 🚀 Live Demo
 
-## Run Locally
+👉 (Add after deployment)
+https://your-game-url.vercel.app
 
-**Prerequisites:**  Node.js
+---
+## 🛠️ Tech Stack
 
+* ⚛️ React (TSX)
+* 🟦 TypeScript
+* ⚡ Vite
+* 🎮 Custom Game Engine
+* 🔊 Howler (sound)
+* 🎨 Tailwind CSS
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 📦 Installation
+
+```bash
+git clone https://github.com/your-username/Bagha-faas.git
+cd Bagha-faas
+npm install
+```
+
+---
+
+## ▶️ Run Locally
+
+```bash
+npm run dev
+```
+
+Open:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🏗️ Build
+
+```bash
+npm run build
+```
+
+Preview:
+
+```bash
+npm run preview
+```
+
+---
+
+## 🌐 Deployment
+
+### Vercel (Recommended)
+
+1. Push to GitHub
+2. Go to https://vercel.com
+3. Import repo
+4. Click **Deploy**
+
+---
+
+## 🎯 Features
+
+* 🎮 2D Game Engine
+* ⚡ Fast rendering with Vite
+* 🧠 Game logic separation
+* 🔊 Sound effects
+* 📱 Responsive UI
+
+---
+
+## 🧠 Future Improvements
+
+* Multiplayer mode
+* AI opponent
+* Score tracking
+* Mobile optimization
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome!
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
