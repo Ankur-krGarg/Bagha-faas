@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-// --- MISSING IMPORTS FIXED BELOW ---
+
 import { motion, AnimatePresence } from 'framer-motion'; 
 import Board2D, {THEMES, ThemeKey} from './components/Board2D';
-
+import IntroScreen from './ui/IntroScreen';
 import { INITIAL_STATE, GameState } from './game/constants';
 import { isValidMove, checkWin, getBestMove } from './game/logic';
 
@@ -13,6 +13,7 @@ export default function App() {
   const [validMoves, setValidMoves] = useState<number[]>([]);
   const [currentTheme, setCurrentTheme] = useState<ThemeKey>('heritage'); // Default to Bagheli style
   const [gameMode, setGameMode] = useState<'pvp' | 'pve'>('pve');
+  const [screen, setScreen] = useState<'intro' | 'game'>('intro');
 
   // AI Logic - Triggers only in PvE mode when it's Tiger's turn
   useEffect(() => {
@@ -74,7 +75,29 @@ export default function App() {
   };
 
   const theme = THEMES[currentTheme];
-
+  if (screen === 'intro') {
+  return (
+    <IntroScreen
+      onStartPVE={() => {
+        setGameMode('pve');
+        setScreen('game');
+      }}
+      onStartPVP={() => {
+        setGameMode('pvp');
+        setScreen('game');
+      }}
+      onTutorial={() => {
+        console.log("Tutorial clicked");
+      }}
+      onHistory={() => {
+        console.log("History clicked");
+      }}
+      onSettings={() => {
+        console.log("Settings clicked");
+      }}
+    />
+  );
+}
   return (
     <div className={`w-screen h-screen flex ${theme.bg} text-white transition-all duration-1000 font-sans overflow-hidden`}>
       
@@ -169,6 +192,9 @@ export default function App() {
               className="mt-16 px-16 py-6 bg-white text-black text-xl font-black uppercase rounded-full hover:scale-110 active:scale-95 transition-all"
             >
               Start New Hunt
+            </button>
+            <button onClick={() => setScreen('intro')}>
+              Back to Menu
             </button>
           </motion.div>
         )}
